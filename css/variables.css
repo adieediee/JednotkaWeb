@@ -4,9 +4,19 @@
   --color-primary: #5f2df5;
 
   --font-primary: Arial, sans-serif;
+  --font-display: "Urbanist", Arial, sans-serif;
+  --font-accent: "Momo Trust Sans", Arial, sans-serif;
 
   --page-frame-margin: 16px;
   --hero-frame-radius: 32px;
+
+  --logo-strip-height: 96px;
+  --logo-strip-bg: #0f0f0f;
+  --logo-strip-speed: 34s;
+
+  --section-dark-bg: #0f0f0f;
+  --stats-number-size: clamp(96px, 10vw, 150px);
+  --stats-label-size: clamp(32px, 3vw, 48px);
 
   --button-height: 51px;
   --button-padding-x: 22px;
