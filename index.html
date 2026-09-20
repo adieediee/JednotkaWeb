@@ -5,24 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jednotka - Marketing na Jednotku</title>
 
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/pages/home.css" />
   </head>
   <body>
     <main class="hero">
-      <img class="gradient" src="gradient.png" alt="" />
+      <div class="hero-frame">
+        <header class="site-header" aria-label="Hlavná navigácia">
+          <a class="site-header-logo" href="/" aria-label="Jednotka">
+            <img src="assets/logo/Jednotka.svg" alt="" />
+          </a>
 
-      <h1 class="hero-title" aria-label="Marketing na Jednotku">
-        <img
-          class="hero-title-line hero-title-line--top"
-          src="assets/logo/Marketing na.svg"
-          alt=""
-        />
-        <img
-          class="hero-title-line hero-title-line--bottom"
-          src="assets/logo/Jednotku.png"
-          alt=""
-        />
-      </h1>
+          <nav class="site-nav" aria-label="Primárna navigácia">
+            <a href="/">Domov</a>
+            <a href="about.html">O nás</a>
+            <a href="#sluzby">Služby</a>
+            <a href="#kariera">Kariéra</a>
+            <a href="#blog">Blog</a>
+          </nav>
+
+          <a class="button button--primary site-header-button" href="#sluzby">Pozrieť služby</a>
+        </header>
+
+        <div class="hero-badge hero-badge--web">
+          <svg
+            class="hero-badge-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle cx="10.5" cy="10.5" r="8" />
+            <path d="M2.5 10.5h16" />
+            <path d="M10.5 2.5c2.4 2.3 3.5 5 3.5 8s-1.1 5.7-3.5 8" />
+            <path d="M10.5 2.5c-2.4 2.3-3.5 5-3.5 8s1.1 5.7 3.5 8" />
+            <path d="M16.8 16.4l4 1.3-2.1 1.2 1.5 2.6-2.1 1.2-1.5-2.6-2.1 1.2z" />
+          </svg>
+          <span>Web</span>
+        </div>
+
+        <div class="hero-badge hero-badge--branding">
+          <svg
+            class="hero-badge-icon hero-badge-icon--purple"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="m12 2.5 2.8 6.1 6.7.8-5 4.6 1.3 6.6-5.8-3.4-5.8 3.4 1.3-6.6-5-4.6 6.7-.8z" />
+          </svg>
+          <span>Branding</span>
+        </div>
+
+        <div class="hero-badge hero-badge--emaily">
+          <svg
+            class="hero-badge-icon hero-badge-icon--email"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle class="hero-badge-icon-fill" cx="12" cy="12" r="9" />
+            <path d="M6.8 9.2h10.4v6.3H6.8z" />
+            <path d="m6.8 9.2 5.2 3.9 5.2-3.9" />
+          </svg>
+          <span>Emaily</span>
+        </div>
+
+        <div class="hero-badge hero-badge--grafika">
+          <svg
+            class="hero-badge-icon hero-badge-icon--light"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M8.5 7h7" />
+            <path d="M10 7 7.8 18l4.2 3 4.2-3L14 7" />
+            <path d="M12 13v8" />
+            <path d="M9.5 3.5h5" />
+          </svg>
+          <span>Grafika</span>
+        </div>
+
+        <div class="hero-badge hero-badge--reklamy">
+          <svg
+            class="hero-badge-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M4 13h3l8 4V7l-8 4H4z" />
+            <path d="M7 13v5.5" />
+            <path d="M15 10.5h3" />
+            <path d="M17.5 6.5 20 4" />
+            <path d="M17.5 14.5 20 17" />
+            <circle cx="19" cy="14" r="2.4" />
+          </svg>
+          <span>Reklamy</span>
+        </div>
+
+        <h1 class="hero-title" aria-label="Marketing na Jednotku">
+          <img
+            class="hero-title-line hero-title-line--top"
+            src="assets/logo/Marketing na.svg"
+            alt=""
+          />
+          <img
+            class="hero-title-line hero-title-line--bottom"
+            src="assets/logo/Jednotku.png"
+            alt=""
+          />
+        </h1>
+
+        <div class="hero-copy">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at dapibus nisl, et
+            volutpat ex. Donec blandit euismod felis pulvinar facilisis.
+          </p>
+
+          <a class="button button--primary" href="#sluzby">Pozrieť služby</a>
+        </div>
+      </div>
     </main>
   </body>
 </html>
