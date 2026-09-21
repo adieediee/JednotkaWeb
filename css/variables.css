@@ -1,14 +1,25 @@
+@font-face {
+  font-family: "Aspekta Variable";
+  src: url("../assets/fonts/AspektaVariable.woff2") format("woff2-variations");
+  font-weight: 50 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+
   --color-page-bg: #0f0f0f;
   --color-white: #ffffff;
   --color-primary: #5f2df5;
 
-  --font-primary: Arial, sans-serif;
+  --font-secondary: "Aspekta Variable", Arial, sans-serif;
+  --font-primary: var(--font-secondary);
   --font-display: "Urbanist", Arial, sans-serif;
   --font-accent: "Momo Trust Sans", Arial, sans-serif;
 
   --page-frame-margin: 16px;
   --hero-frame-radius: 32px;
+  --section-padding-x: clamp(16px, 7vw, 110px);
 
   --logo-strip-height: 96px;
   --logo-strip-bg: #0f0f0f;
