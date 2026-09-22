@@ -2,7 +2,10 @@ const clientsCta = document.querySelector(".clients-cta-section");
 
 if (clientsCta) {
   const trailLayer = clientsCta.querySelector(".cursor-trail-layer");
+  const floatingCards = [...clientsCta.querySelectorAll(".floating-project-card")];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let lastTrail = 0;
+  let floatFrame = null;
 
   const updateFloatingCards = (event) => {
     const rect = clientsCta.getBoundingClientRect();
@@ -35,6 +38,48 @@ if (clientsCta) {
     clientsCta.style.setProperty("--float-y", "0px");
   };
 
+  const resetFloatingCardDrift = () => {
+    floatingCards.forEach((card) => {
+      card.style.setProperty("--float-card-drift-x", "0px");
+      card.style.setProperty("--float-card-drift-y", "0px");
+    });
+  };
+
+  const animateFloatingCardDrift = (time) => {
+    if (reduceMotion.matches) {
+      resetFloatingCardDrift();
+      floatFrame = null;
+      return;
+    }
+
+    floatingCards.forEach((card, index) => {
+      const phase = index * 1.31;
+      const driftX = Math.sin(time * 0.00048 + phase) * 4.5;
+      const driftY = Math.cos(time * 0.00058 + phase) * 6;
+
+      card.style.setProperty("--float-card-drift-x", `${driftX.toFixed(2)}px`);
+      card.style.setProperty("--float-card-drift-y", `${driftY.toFixed(2)}px`);
+    });
+
+    floatFrame = window.requestAnimationFrame(animateFloatingCardDrift);
+  };
+
+  const syncFloatingCardDrift = () => {
+    if (floatFrame) {
+      window.cancelAnimationFrame(floatFrame);
+      floatFrame = null;
+    }
+
+    if (reduceMotion.matches) {
+      resetFloatingCardDrift();
+      return;
+    }
+
+    floatFrame = window.requestAnimationFrame(animateFloatingCardDrift);
+  };
+
   clientsCta.addEventListener("pointermove", updateFloatingCards);
   clientsCta.addEventListener("pointerleave", resetFloatingCards);
+  reduceMotion.addEventListener("change", syncFloatingCardDrift);
+  syncFloatingCardDrift();
 }
