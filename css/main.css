@@ -147,6 +147,52 @@ body {
   --button-font-size: 16px;
 }
 
+@media (max-width: 700px) {
+  .site-header {
+    top: 32px;
+    right: auto;
+    left: 32px;
+    width: calc((100% - 64px) / 0.68);
+    grid-template-columns: 165px 1fr;
+    gap: 28px;
+    transform: scale(0.68);
+    transform-origin: top left;
+  }
+
+  .site-header-button {
+    display: none;
+  }
+
+  .site-nav {
+    gap: 26px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    left: 28px;
+    width: calc(100% - 56px);
+    transform: none;
+  }
+
+  .site-header-logo {
+    width: 126px;
+    height: auto;
+  }
+
+  .site-nav {
+    justify-content: start;
+    gap: 14px;
+  }
+
+  .site-nav a {
+    font-size: 11px;
+  }
+}
+
 .content-badge {
   display: inline-flex;
   align-items: center;

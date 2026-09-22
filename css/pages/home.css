@@ -383,6 +383,7 @@
 }
 
 .testimonials-intro h2 {
+  max-width: 920px;
   margin: 0;
   color: rgb(255 255 255 / 92%);
   font-family: var(--font-display);
@@ -578,6 +579,7 @@
 }
 
 .approach-grid {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   display: grid;
@@ -1232,13 +1234,107 @@
     --section-padding-x: 24px;
   }
 
+  .hero {
+    min-height: 760px;
+    height: min(100svh, 760px);
+  }
+
+  .hero-frame {
+    border-radius: 26px;
+  }
+
+  .hero-title {
+    top: 50%;
+    transform: translate(-50%, -48%);
+  }
+
+  .hero-title-line--top {
+    width: min(64vw, 600px);
+  }
+
+  .hero-title-line--bottom {
+    width: min(51vw, 475px);
+    margin-top: -14px;
+  }
+
+  .hero-copy {
+    top: 68%;
+    width: min(74%, 520px);
+  }
+
+  .hero-copy p {
+    font-size: 15px;
+  }
+
+  .hero-badge {
+    gap: 9px;
+    height: 42px;
+    padding: 0 18px;
+    font-size: 21px;
+  }
+
+  .hero-badge-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero-badge--web {
+    top: 33%;
+    left: 8%;
+  }
+
+  .hero-badge--branding {
+    top: 29%;
+    left: 50%;
+    transform:
+      translateX(-50%)
+      translate3d(
+        calc(var(--hero-badge-x, 0px) * var(--hero-badge-strength)),
+        calc(var(--hero-badge-y, 0px) * var(--hero-badge-strength)),
+        0
+      )
+      rotate(var(--hero-badge-rotate));
+  }
+
+  .hero-badge--emaily {
+    top: 34%;
+    right: 8%;
+    left: auto;
+  }
+
+  .hero-badge--grafika {
+    top: 54%;
+    left: 10%;
+  }
+
+  .hero-badge--reklamy {
+    top: 56%;
+    right: 10%;
+    left: auto;
+  }
+
   .stats-section {
     padding-top: 78px;
     padding-bottom: 102px;
   }
 
   .stats-grid {
+    grid-template-columns: 1fr;
     gap: 28px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .stat-item {
+    justify-items: center;
+  }
+
+  .stat-item strong {
+    font-size: clamp(76px, 18vw, 116px);
+  }
+
+  .stat-item span {
+    font-size: clamp(28px, 7vw, 42px);
   }
 
   .testimonials-wrap {
@@ -1247,25 +1343,25 @@
   }
 
   .testimonials-field {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
     min-height: 0;
   }
 
   .testimonial-card {
     --testimonial-x: 0px;
     --testimonial-y: 0px;
-    position: relative;
+    --testimonial-rotate: 0deg;
+    position: static;
     top: auto;
     right: auto;
     bottom: auto;
     left: auto;
     width: 100%;
-    transform:
-      translate3d(0, 80px, 0)
-      rotate(var(--testimonial-rotate, 0deg))
-      scale(0.94);
+    max-width: 620px;
+    margin: 0 auto;
+    transform: none;
   }
 
   .testimonial-card--two {
@@ -1279,9 +1375,7 @@
   }
 
   .testimonial-card--five {
-    grid-column: 1 / -1;
-    justify-self: center;
-    max-width: 430px;
+    max-width: 620px;
   }
 
   .approach-section {
@@ -1383,47 +1477,108 @@
   }
 
   .clients-cta-section {
-    min-height: 1260px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: center;
+    min-height: auto;
+    padding: 96px var(--section-padding-x) 28px;
   }
 
   .clients-cta-content {
-    top: 31.5%;
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    gap: 48px;
+    width: 100%;
+    margin: 22px auto;
+    padding: 0;
+    transform: none;
+  }
+
+  .clients-cta-content h2 {
+    max-width: 760px;
+    font-size: clamp(50px, 8.5vw, 72px);
+  }
+
+  .floating-project-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .floating-project-card--one,
+  .floating-project-card--two,
+  .floating-project-card--three {
+    grid-row: 1;
+  }
+
+  .floating-project-card--four,
+  .floating-project-card--five,
+  .floating-project-card--six {
+    grid-row: 3;
+  }
+
+  .floating-project-card--one,
+  .floating-project-card--four {
+    justify-self: start;
+  }
+
+  .floating-project-card--two,
+  .floating-project-card--five {
+    justify-self: center;
+  }
+
+  .floating-project-card--three,
+  .floating-project-card--six {
+    justify-self: end;
+  }
+
+  .site-footer-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 34px;
+  }
+
+  .clients-cta-content {
     gap: 48px;
   }
 
   .floating-project-card--one {
     --card-width: 170px;
-    top: 13%;
-    left: 4%;
   }
 
   .floating-project-card--two {
     --card-width: 118px;
-    top: 25%;
-    left: 11%;
   }
 
   .floating-project-card--three {
     --card-width: 170px;
-    top: 12%;
   }
 
   .floating-project-card--four {
     --card-width: 170px;
-    top: 16%;
-    right: 4%;
   }
 
   .floating-project-card--five {
     --card-width: 118px;
-    bottom: 36%;
-    left: 4%;
+    display: block;
   }
 
   .floating-project-card--six {
     --card-width: 130px;
-    bottom: 35%;
-    right: 5%;
+    display: block;
   }
 
   .site-footer-card {
@@ -1460,6 +1615,84 @@
     --section-padding-x: 16px;
   }
 
+  .hero {
+    min-height: 650px;
+    height: min(100svh, 680px);
+    padding: 10px;
+  }
+
+  .hero-frame {
+    border-radius: 24px;
+  }
+
+  .hero-title {
+    top: 50%;
+    transform: translate(-50%, -48%);
+  }
+
+  .hero-title-line--top {
+    width: 56vw;
+    max-width: 250px;
+  }
+
+  .hero-title-line--bottom {
+    width: 50vw;
+    max-width: 220px;
+    margin-top: -10px;
+  }
+
+  .hero-copy {
+    top: 70%;
+    width: min(66%, 280px);
+  }
+
+  .hero-copy p {
+    font-size: 13px;
+    line-height: 1.32;
+  }
+
+  .hero-copy .button {
+    margin-top: 24px;
+  }
+
+  .hero-badge {
+    gap: 7px;
+    height: 34px;
+    padding: 0 13px;
+    font-size: 17px;
+  }
+
+  .hero-badge-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .hero-badge--web {
+    top: 35%;
+    left: 8%;
+  }
+
+  .hero-badge--branding {
+    top: 32%;
+  }
+
+  .hero-badge--emaily {
+    top: 37%;
+    right: auto;
+    left: 57%;
+  }
+
+  .hero-badge--grafika {
+    top: 54%;
+    left: 7%;
+  }
+
+  .hero-badge--reklamy {
+    top: 58%;
+    right: auto;
+    left: 52%;
+  }
+
   .stats-section {
     padding-top: 64px;
     padding-bottom: 82px;
@@ -1479,22 +1712,13 @@
   }
 
   .testimonials-intro h2 {
-    font-size: 46px;
+    width: min(100%, 340px);
+    font-size: 34px;
+    line-height: 1.02;
   }
 
   .testimonials-field {
-    display: flex;
-    flex-direction: column;
     gap: 28px;
-  }
-
-  .testimonial-card {
-    --testimonial-rotate: 0deg;
-    position: static;
-  }
-
-  .testimonial-card + .testimonial-card {
-    margin-top: 16px;
   }
 
   .testimonial-card-inner {
@@ -1614,12 +1838,16 @@
   }
 
   .clients-cta-section {
-    min-height: 1180px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    min-height: auto;
+    padding: 76px var(--section-padding-x) 16px;
   }
 
   .clients-cta-content {
+    grid-row: 2;
     gap: 38px;
-    top: 29%;
+    margin: 12px auto;
   }
 
   .clients-cta-content h2 {
@@ -1634,31 +1862,36 @@
 
   .floating-project-card--one {
     --card-width: 130px;
-    top: 11%;
-    left: 4%;
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .floating-project-card--two,
-  .floating-project-card--five,
   .floating-project-card--six {
     display: none;
   }
 
   .floating-project-card--three {
     --card-width: 132px;
-    top: 13%;
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .floating-project-card--four {
     --card-width: 132px;
-    top: 11%;
-    right: 4%;
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .floating-project-card--five {
+    --card-width: 118px;
+    display: block;
+    grid-column: 2;
+    grid-row: 3;
   }
 
   .site-footer-card {
-    right: 16px;
-    bottom: 24px;
-    left: 16px;
+    grid-row: 4;
     padding: 28px;
     border-radius: 22px;
   }
@@ -1669,8 +1902,11 @@
   }
 
   .footer-brand p {
-    margin-bottom: 26px;
-    font-size: 22px;
+    display: none;
+  }
+
+  .footer-newsletter {
+    display: none;
   }
 
   .footer-nav {
