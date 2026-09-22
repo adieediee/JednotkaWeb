@@ -30,7 +30,20 @@
         <a href="blog.html" aria-current="page">Blog</a>
       </nav>
 
-      <a class="button button--primary site-header-button" href="index.html#sluzby">Pozrieť služby</a>
+      <a class="button button--primary site-header-button" href="index.html#sluzby" aria-label="Pozrieť služby">
+        <span class="button-label" aria-hidden="true">
+          <span class="button-label-track">
+            <span class="button-label-line">Pozrieť služby</span>
+            <span class="button-label-line">Pozrieť služby</span>
+          </span>
+        </span>
+        <span class="button-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M7 17 17 7" />
+            <path d="M8 7h9v9" />
+          </svg>
+        </span>
+      </a>
     </header>
 
     <main class="blog-main">
