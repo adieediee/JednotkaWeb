@@ -11,7 +11,7 @@ const purpleColor = [138, 92, 255];
 const colorString = (color) => `rgb(${color[0]} ${color[1]} ${color[2]})`;
 
 waveTexts.forEach((text) => {
-  const section = text.closest(".approach-section") || text;
+  const section = text.closest("[data-wave-scroll-root], .approach-section") || text;
   const label = text.textContent.replace(/\s+/g, " ").trim();
   const chars = [];
 
