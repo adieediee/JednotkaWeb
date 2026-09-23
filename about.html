@@ -1,49 +1,378 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About</title>
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O nás - Jednotka</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css" />
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/pages/about.css" />
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <header class="site-header">
-    <nav class="container">
-      <a href="index.html">Logo</a>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/pages/home.css" />
+    <link rel="stylesheet" href="css/pages/about.css" />
+  </head>
+  <body class="about-page">
+    <header class="site-header about-header" aria-label="Hlavná navigácia">
+      <a class="site-header-logo" href="index.html" aria-label="Jednotka">
+        <img src="assets/logo/Jednotka.svg" alt="" />
+      </a>
 
-  <main>
-    <section class="section about-hero">
-      <h1 data-reveal>About us</h1>
-      <p data-reveal>Replace this with your own content.</p>
-    </section>
-  </main>
+      <nav class="site-nav" id="site-nav" aria-label="Primárna navigácia">
+        <a href="index.html">Domov</a>
+        <a href="about.html" aria-current="page">O nás</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="index.html#kariera">Kariéra</a>
+        <a href="blog.html">Blog</a>
+      </nav>
 
-  <footer class="site-footer">
-    <div class="container">&copy; 2026</div>
-  </footer>
+      <a class="button button--primary site-header-button" href="#kontakt" aria-label="Kontaktovať nás">
+        <span class="button-label" aria-hidden="true">
+          <span class="button-label-track">
+            <span class="button-label-line">Kontaktovať nás</span>
+            <span class="button-label-line">Kontaktovať nás</span>
+          </span>
+        </span>
+        <span class="button-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M7 17 17 7" />
+            <path d="M8 7h9v9" />
+          </svg>
+        </span>
+      </a>
 
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+      <button
+        class="site-nav-toggle"
+        type="button"
+        aria-label="Otvoriť menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="site-nav-toggle-line"></span>
+        <span class="site-nav-toggle-line"></span>
+        <span class="site-nav-toggle-line"></span>
+      </button>
+    </header>
 
-  <script src="js/animations/gsap-config.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/animations/reveal.js"></script>
+    <main>
+      <section class="about-hero" aria-labelledby="about-title">
+        <div class="about-hero-inner">
+          <span class="about-eyebrow">O nás</span>
+          <h1 id="about-title">Jeden tím pre web, e-shop aj marketing</h1>
+          <p>
+            Namiesto piatich dodávateľov máte jeden tím, ktorý vidí celý obraz.
+            Web, reklamy, emaily aj vizuál riešime spolu.
+          </p>
+          <a class="button button--primary" href="#kontakt" aria-label="Získať nezáväznú ponuku">
+            <span class="button-label" aria-hidden="true">
+              <span class="button-label-track">
+                <span class="button-label-line">Získať nezáväznú ponuku</span>
+                <span class="button-label-line">Získať nezáväznú ponuku</span>
+              </span>
+            </span>
+            <span class="button-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </section>
 
-  <script src="js/animations/about.js"></script>
-</body>
+      <section class="about-trust-section" aria-label="Dôvera klientov">
+        <p>Pomohli sme rásť viac ako 100 firmám naprieč 15 odvetviami.</p>
+        <div class="about-logo-strip" aria-hidden="true">
+          <div class="about-logo-strip-track">
+            <img src="assets/logo/moving-stripe/logo-stripe-1.svg" alt="" />
+            <img src="assets/logo/moving-stripe/logo-stripe-2.svg" alt="" />
+            <img src="assets/logo/moving-stripe/logo-stripe-1.svg" alt="" />
+            <img src="assets/logo/moving-stripe/logo-stripe-2.svg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="about-problem-section" aria-labelledby="problem-title">
+        <div class="about-section-head">
+          <span class="about-eyebrow">Problém</span>
+          <h2 id="problem-title">Marketing rozbitý medzi piatich dodávateľov nefunguje</h2>
+        </div>
+        <div class="about-text-grid">
+          <p>
+            Web robí jeden človek, grafiku druhý, emaily tretí a reklamy si riešite sami.
+            Nikto nevidí celý obraz a výsledky sa strácajú v komunikácii.
+          </p>
+          <p>
+            Jednotka to rieši inak: jeden tím, jedna zodpovednosť a jeden prehľad nad tým,
+            čo pre vás robíme.
+          </p>
+        </div>
+      </section>
+
+      <section class="about-services-section" aria-labelledby="about-services-title">
+        <div class="about-section-head">
+          <span class="about-eyebrow">Služby</span>
+          <h2 id="about-services-title">Riešime veci, ktoré spolu súvisia</h2>
+        </div>
+        <div class="about-services-grid">
+          <article class="about-service-item">
+            <img src="assets/icons/web.png" alt="" />
+            <h3>Weby</h3>
+            <p>Prehľadné stránky, ktoré vysvetlia ponuku a posúvajú ľudí k akcii.</p>
+          </article>
+          <article class="about-service-item">
+            <img src="assets/icons/services-eshop.svg" alt="" />
+            <h3>Správa e-shopov</h3>
+            <p>Nastavenia, úpravy, platobné brány, redizajn aj zmeny na mieru.</p>
+          </article>
+          <article class="about-service-item">
+            <img src="assets/icons/email.png" alt="" />
+            <h3>Email marketing</h3>
+            <p>Automatizácie a kampane, ktoré pracujú s databázou dlhodobo.</p>
+          </article>
+          <article class="about-service-item">
+            <img src="assets/icons/ppc.png" alt="" />
+            <h3>PPC reklamy</h3>
+            <p>Kampane nastavené podľa cieľa, rozpočtu a reálnych dát.</p>
+          </article>
+          <article class="about-service-item">
+            <img src="assets/icons/branding.png" alt="" />
+            <h3>Branding</h3>
+            <p>Značka, tón a vizuál, ktoré držia pohromade naprieč kanálmi.</p>
+          </article>
+          <article class="about-service-item">
+            <img src="assets/icons/grafika.png" alt="" />
+            <h3>Grafika</h3>
+            <p>Vizuály pre web, reklamy, emaily, sociálne siete aj tlač.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-process-section" aria-labelledby="process-title">
+        <div class="about-section-head">
+          <span class="about-eyebrow">Ako pracujeme</span>
+          <h2 id="process-title">Od prvého rozhovoru po výsledky, ktoré vidíte</h2>
+        </div>
+        <div class="process-grid">
+          <article class="process-step">
+            <span class="process-step-number">01</span>
+            <h3>Konzultácia</h3>
+            <p>Spoznáme váš biznis, ciele aj to, čo doteraz nefungovalo. Bez záväzkov.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-step-number">02</span>
+            <h3>Návrh riešenia</h3>
+            <p>Pripravíme konkrétny plán: čo spraviť, v akom poradí a prečo.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-step-number">03</span>
+            <h3>Realizácia</h3>
+            <p>Tím pracuje naprieč webom, e-shopom, emailami aj reklamou súčasne.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-step-number">04</span>
+            <h3>Optimalizácia</h3>
+            <p>Sledujeme čísla a priebežne vylepšujeme to, čo prináša výsledky.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-why-section" aria-labelledby="why-title">
+        <div class="about-section-head">
+          <span class="about-eyebrow">Prečo Jednotka</span>
+          <h2 id="why-title">Nie sme ďalšia agentúra, ktorá si najme subdodávateľov</h2>
+        </div>
+        <div class="about-why-list">
+          <article>
+            <h3>Jeden tím, jedna zodpovednosť.</h3>
+            <p>Nehľadáte, kto za čo môže. Za výsledok zodpovedáme my.</p>
+          </article>
+          <article>
+            <h3>Vidíte celý obraz.</h3>
+            <p>Web, e-shop, reklamy aj emaily riešime spolu, nie ako izolované projekty.</p>
+          </article>
+          <article>
+            <h3>Rozhodujeme sa podľa čísel.</h3>
+            <p>Riešenia posudzujeme podľa toho, či prinášajú výsledky.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-results-section" aria-labelledby="results-title">
+        <div class="about-section-head about-section-head--center">
+          <span class="about-eyebrow">Výsledky</span>
+          <h2 id="results-title">Za číslami sú naši klienti</h2>
+        </div>
+        <div class="about-stats-strip" aria-label="Jednotka v číslach">
+          <div class="about-stat">
+            <strong data-count-to="100" data-count-suffix="+">100+</strong>
+            <span>klientov</span>
+          </div>
+          <div class="about-stat">
+            <strong data-count-to="5">5</strong>
+            <span>rokov praxe</span>
+          </div>
+          <div class="about-stat">
+            <strong data-count-to="15" data-count-suffix="+">15+</strong>
+            <span>odvetví</span>
+          </div>
+        </div>
+        <div class="about-case-grid">
+          <article>
+            <strong>+40 %</strong>
+            <h3>objednávok cez email</h3>
+            <p>Po 3 mesiacoch automatizácií a pravidelnej komunikácie.</p>
+          </article>
+          <article>
+            <strong>+32 %</strong>
+            <h3>viac dopytov z webu</h3>
+            <p>Po úprave štruktúry, textov a kľúčových landing pages.</p>
+          </article>
+          <article>
+            <strong>-18 %</strong>
+            <h3>nižšia cena za lead</h3>
+            <p>Po prečistení kampaní a jasnejšom meraní výkonu.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-faq-section" aria-labelledby="faq-title">
+        <div class="about-section-head">
+          <span class="about-eyebrow">FAQ</span>
+          <h2 id="faq-title">Časté otázky</h2>
+        </div>
+        <div class="about-faq-list">
+          <details>
+            <summary>Koľko to stojí?</summary>
+            <p>Cena závisí od rozsahu. Po konzultácii dostanete konkrétnu ponuku, nie balíček od stola.</p>
+          </details>
+          <details>
+            <summary>Ako dlho trvá spolupráca?</summary>
+            <p>Od jednorazových projektov po dlhodobú správu marketingu. Dohodneme si to, čo dáva zmysel.</p>
+          </details>
+          <details>
+            <summary>Som viazaný zmluvou na roky?</summary>
+            <p>Nie. Spolupracujeme na základe výsledkov, nie viazanosti.</p>
+          </details>
+          <details>
+            <summary>Budem mať prehľad o tom, čo sa deje?</summary>
+            <p>Áno. Dostanete pravidelné reporty a jeden kontaktný bod namiesto piatich.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="about-contact-section" id="kontakt" aria-labelledby="contact-title">
+        <div class="about-contact-inner">
+          <div class="about-contact-copy">
+            <span class="about-eyebrow">Nezáväzná ponuka</span>
+            <h2 id="contact-title">Napíšte nám, s čím začneme</h2>
+            <p>Do 24 hodín sa vám ozveme s nezáväznou cenovou ponukou. Bez tlaku, bez záväzkov.</p>
+          </div>
+
+          <form class="about-contact-form">
+            <label>
+              <span>Meno a priezvisko</span>
+              <input type="text" name="name" placeholder="Vaše meno" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="vas@email.sk" required />
+            </label>
+            <label>
+              <span>Telefón</span>
+              <input type="tel" name="phone" placeholder="+421 900 000 000" />
+            </label>
+            <label>
+              <span>Čo vás zaujíma?</span>
+              <select name="interest">
+                <option value="">Vyberte možnosť</option>
+                <option>Web</option>
+                <option>Správa e-shopov</option>
+                <option>Email marketing</option>
+                <option>PPC Reklamy</option>
+                <option>Branding</option>
+                <option>Grafika</option>
+                <option>Neviem, poradíte mi</option>
+              </select>
+            </label>
+            <label class="about-contact-message">
+              <span>Popíšte váš projekt</span>
+              <textarea name="message" placeholder="Pár viet o tom, čo potrebujete alebo čo vás trápi"></textarea>
+            </label>
+            <button class="button button--primary" type="submit">
+              <span class="button-label" aria-hidden="true">
+                <span class="button-label-track">
+                  <span class="button-label-line">Získať nezáväznú ponuku</span>
+                  <span class="button-label-line">Získať nezáväznú ponuku</span>
+                </span>
+              </span>
+              <span class="button-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </span>
+            </button>
+            <p class="about-form-note">Bez záväzkov. Ozveme sa do 1 pracovného dňa.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer-card about-footer" aria-label="Päta stránky">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html" aria-label="Jednotka">
+          <img src="assets/logo/Jednotka.svg" alt="" />
+        </a>
+        <p>Jeden tím pre web, reklamu, emaily a vizuál. Bez chaosu medzi kanálmi.</p>
+        <form class="footer-newsletter">
+          <label for="footer-email">Odber noviniek</label>
+          <div class="footer-newsletter-field">
+            <input id="footer-email" type="email" placeholder="Váš email" />
+            <button type="submit" aria-label="Odoslať">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="footer-nav-wrap">
+        <nav class="footer-nav" aria-label="Päta navigácia">
+          <div class="footer-nav-group">
+            <span>Menu</span>
+            <a href="sluzby.html">Služby</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">O nás</a>
+            <a href="contact.html">Kontakt</a>
+          </div>
+          <div class="footer-nav-group">
+            <span>Kontakt</span>
+            <a href="mailto:hello@jednotka.sk">hello@jednotka.sk</a>
+            <a href="tel:+421000000000">+421 000 000 000</a>
+            <a href="#kontakt">Začať projekt</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-side">
+        <div class="footer-socials" aria-label="Sociálne siete">
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="Behance">Bē</a>
+          <a href="#" aria-label="LinkedIn">In</a>
+        </div>
+        <p>© 2026 Jednotka</p>
+      </div>
+    </footer>
+
+    <script src="js/site-nav.js" defer></script>
+    <script src="js/stats-counter.js" defer></script>
+  </body>
 </html>

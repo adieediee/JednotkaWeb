@@ -4,8 +4,314 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Služby - Jednotka</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/pages/services.css" />
   </head>
-  <body></body>
+  <body class="services-page">
+    <main class="services-hero hero-frame" aria-labelledby="services-title">
+      <div class="hero-badge-row" aria-hidden="true">
+        <div class="hero-badge hero-badge--eshopy">
+          <img class="hero-badge-icon" src="assets/icons/services-eshop.svg" alt="" />
+          <span>E-shopy</span>
+        </div>
+
+        <div class="hero-badge hero-badge--web">
+          <img class="hero-badge-icon" src="assets/icons/web.png" alt="" />
+          <span>Web</span>
+        </div>
+
+        <div class="hero-badge hero-badge--emaily">
+          <img class="hero-badge-icon" src="assets/icons/email.png" alt="" />
+          <span>Emaily</span>
+        </div>
+
+        <div class="hero-badge hero-badge--grafika">
+          <img class="hero-badge-icon" src="assets/icons/grafika.png" alt="" />
+          <span>Grafika</span>
+        </div>
+
+        <div class="hero-badge hero-badge--reklamy">
+          <img class="hero-badge-icon" src="assets/icons/ppc.png" alt="" />
+          <span>Reklamy</span>
+        </div>
+      </div>
+
+      <h1 class="services-title" id="services-title">
+        Naše služby sú<br />
+        na mieru
+      </h1>
+
+      <section class="services-cases" aria-label="Služby" data-drag-scroll data-auto-scroll data-auto-scroll-speed="42">
+        <article class="services-case-card">
+          <a class="services-case-link" href="#" aria-label="Weby">
+            <img class="services-case-image" src="img/projects/placeholder.jpg" alt="" />
+            <span class="services-case-shade" aria-hidden="true"></span>
+            <span class="arrow-badge-button services-case-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </span>
+            <span class="services-case-copy">
+              <strong>Weby</strong>
+              <span>Prezentačné weby</span>
+            </span>
+          </a>
+        </article>
+
+        <article class="services-case-card">
+          <a class="services-case-link" href="#" aria-label="E-shopy">
+            <img class="services-case-image" src="img/projects/placeholder.jpg" alt="" />
+            <span class="services-case-shade" aria-hidden="true"></span>
+            <span class="arrow-badge-button services-case-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </span>
+            <span class="services-case-copy">
+              <strong>E-shopy</strong>
+              <span>Predajné riešenia</span>
+            </span>
+          </a>
+        </article>
+
+        <article class="services-case-card">
+          <a class="services-case-link" href="#" aria-label="Reklamy">
+            <img class="services-case-image" src="img/projects/placeholder.jpg" alt="" />
+            <span class="services-case-shade" aria-hidden="true"></span>
+            <span class="arrow-badge-button services-case-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </span>
+            <span class="services-case-copy">
+              <strong>Reklamy</strong>
+              <span>Výkonnostné kampane</span>
+            </span>
+          </a>
+        </article>
+
+        <article class="services-case-card">
+          <a class="services-case-link" href="#" aria-label="Emaily">
+            <img class="services-case-image" src="img/projects/placeholder.jpg" alt="" />
+            <span class="services-case-shade" aria-hidden="true"></span>
+            <span class="arrow-badge-button services-case-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </span>
+            <span class="services-case-copy">
+              <strong>Emaily</strong>
+              <span>Email marketing</span>
+            </span>
+          </a>
+        </article>
+
+        <article class="services-case-card">
+          <a class="services-case-link" href="#" aria-label="Grafika">
+            <img class="services-case-image" src="img/projects/placeholder.jpg" alt="" />
+            <span class="services-case-shade" aria-hidden="true"></span>
+            <span class="arrow-badge-button services-case-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </span>
+            <span class="services-case-copy">
+              <strong>Grafika</strong>
+              <span>Vizuálna identita</span>
+            </span>
+          </a>
+        </article>
+      </section>
+    </main>
+
+    <section class="services-trust-strip" aria-label="Dôvera klientov">
+      <p>Pomohli sme rásť viac ako 100 firmám naprieč 15 odvetviami.</p>
+      <div class="services-logo-strip" aria-hidden="true">
+        <div class="services-logo-strip-track">
+          <img src="assets/logo/moving-stripe/logo-stripe-1.svg" alt="" />
+          <img src="assets/logo/moving-stripe/logo-stripe-2.svg" alt="" />
+          <img src="assets/logo/moving-stripe/logo-stripe-1.svg" alt="" />
+          <img src="assets/logo/moving-stripe/logo-stripe-2.svg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="services-problem-section" aria-labelledby="services-problem-title">
+      <div class="services-section-grid">
+        <h2 id="services-problem-title">Marketing rozbitý medzi piatich dodávateľov nefunguje</h2>
+        <div class="services-section-copy">
+          <p>
+            Web robí jeden, grafiku druhý, emaily tretí a reklamy si spravujete sami.
+            Nikto nevidí celý obraz, termíny sa naťahujú a výsledky sa strácajú v komunikácii.
+          </p>
+          <p>
+            Jednotka to rieši inak. Jeden tím, jedna zodpovednosť, jeden prehľad nad tým,
+            čo pre vás robíme.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-work-section" aria-labelledby="services-work-title">
+      <h2 id="services-work-title">Od prvého rozhovoru po výsledky, ktoré vidíte</h2>
+      <div class="services-work-grid">
+        <article>
+          <span>01</span>
+          <h3>Konzultácia</h3>
+          <p>Spoznáme váš biznis, ciele aj to, čo doteraz nefungovalo. Bez záväzkov.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Návrh riešenia</h3>
+          <p>Pripravíme konkrétny plán. Čo, v akom poradí a s akým očakávaným výsledkom.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Realizácia</h3>
+          <p>Tím pracuje naprieč webom, e-shopom, emailami aj reklamou súčasne.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Optimalizácia</h3>
+          <p>Sledujeme čísla a priebežne vylepšujeme to, čo prináša výsledky.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="services-why-section" aria-labelledby="services-why-title">
+      <h2 id="services-why-title">Nie sme ďalšia agentúra, ktorá si najme subdodávateľov</h2>
+      <div class="services-why-list">
+        <article>
+          <h3>Jeden tím, jedna zodpovednosť.</h3>
+          <p>Nehľadáte, kto za čo môže. Za všetko zodpovedáme my.</p>
+        </article>
+        <article>
+          <h3>Vidíte celý obraz.</h3>
+          <p>Web, e-shop, reklamy aj emaily riešime spolu, nie ako izolované projekty.</p>
+        </article>
+        <article>
+          <h3>Rozhodujeme sa podľa čísel.</h3>
+          <p>Každé riešenie posudzujeme podľa toho, či prináša výsledky.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="services-results-section" aria-labelledby="services-results-title">
+      <h2 id="services-results-title">Za číslami sú naši klienti</h2>
+      <div class="services-stats-row" aria-label="Výsledky agentúry">
+        <div><strong>100+</strong><span>klientov</span></div>
+        <div><strong>5</strong><span>rokov praxe</span></div>
+        <div><strong>15+</strong><span>odvetví</span></div>
+      </div>
+      <div class="services-result-cards">
+        <article>
+          <strong>+40 %</strong>
+          <h3>objednávok cez email</h3>
+          <p>Po troch mesiacoch automatizácií a pravidelnej komunikácie.</p>
+        </article>
+        <article>
+          <strong>+32 %</strong>
+          <h3>viac dopytov z webu</h3>
+          <p>Po úprave štruktúry, textov a kľúčových podstránok.</p>
+        </article>
+        <article>
+          <strong>-18 %</strong>
+          <h3>nižšia cena za lead</h3>
+          <p>Po prečistení kampaní a jasnejšom meraní výkonu.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="services-faq-section" aria-labelledby="services-faq-title">
+      <h2 id="services-faq-title">Časté otázky</h2>
+      <div class="services-faq-list">
+        <details>
+          <summary>Koľko to stojí?</summary>
+          <p>Cena závisí od rozsahu. Po konzultácii dostanete konkrétnu ponuku, nie balíček od stola.</p>
+        </details>
+        <details>
+          <summary>Ako dlho trvá spolupráca?</summary>
+          <p>Od jednorazových projektov po dlhodobú správu marketingu. Dohodneme si to, čo dáva zmysel.</p>
+        </details>
+        <details>
+          <summary>Som viazaný zmluvou na roky?</summary>
+          <p>Nie. Spolupracujeme na základe výsledkov, nie viazanosti.</p>
+        </details>
+        <details>
+          <summary>Budem mať prehľad o tom, čo sa deje?</summary>
+          <p>Áno. Dostanete pravidelné reporty a jeden kontaktný bod namiesto piatich.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="services-contact-section" id="kontakt" aria-labelledby="services-contact-title">
+      <div class="services-contact-copy">
+        <h2 id="services-contact-title">Napíšte nám, s čím začneme</h2>
+        <p>Do 24 hodín sa vám ozveme s nezáväznou cenovou ponukou. Bez tlaku, bez záväzkov.</p>
+      </div>
+      <form class="services-contact-form">
+        <label>
+          <span>Meno a priezvisko</span>
+          <input type="text" name="name" placeholder="Vaše meno" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="vas@email.sk" required />
+        </label>
+        <label>
+          <span>Telefón</span>
+          <input type="tel" name="phone" placeholder="+421 900 000 000" />
+        </label>
+        <label>
+          <span>Čo vás zaujíma?</span>
+          <select name="interest">
+            <option value="">Vyberte možnosť</option>
+            <option>Web</option>
+            <option>Správa e-shopov</option>
+            <option>Email marketing</option>
+            <option>PPC Reklamy</option>
+            <option>Branding</option>
+            <option>Grafika</option>
+            <option>Neviem, poradíte mi</option>
+          </select>
+        </label>
+        <label class="services-contact-message">
+          <span>Popíšte váš projekt</span>
+          <textarea name="message" placeholder="Pár viet o tom, čo potrebujete alebo čo vás trápi"></textarea>
+        </label>
+        <button class="button button--primary" type="submit">
+          <span class="button-label" aria-hidden="true">
+            <span class="button-label-track">
+              <span class="button-label-line">Získať nezáväznú ponuku</span>
+              <span class="button-label-line">Získať nezáväznú ponuku</span>
+            </span>
+          </span>
+          <span class="button-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </span>
+        </button>
+        <p class="services-form-note">Bez záväzkov. Ozveme sa do 1 pracovného dňa.</p>
+      </form>
+    </section>
+
+    <script src="js/hero-badges.js" defer></script>
+    <script src="js/drag-scroll.js" defer></script>
+  </body>
 </html>

@@ -24,7 +24,7 @@
             <img src="assets/logo/Jednotka.svg" alt="" />
           </a>
 
-          <nav class="site-nav" aria-label="Primárna navigácia">
+          <nav class="site-nav" id="site-nav" aria-label="Primárna navigácia">
             <a href="/">Domov</a>
             <a href="about.html">O nás</a>
             <a href="sluzby.html">Služby</a>
@@ -46,31 +46,45 @@
               </svg>
             </span>
           </a>
+
+          <button
+            class="site-nav-toggle"
+            type="button"
+            aria-label="Otvoriť menu"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span class="site-nav-toggle-line"></span>
+            <span class="site-nav-toggle-line"></span>
+            <span class="site-nav-toggle-line"></span>
+          </button>
         </header>
 
-        <div class="hero-badge hero-badge--web">
-          <img class="hero-badge-icon" src="assets/icons/web.png" alt="" />
-          <span>Web</span>
-        </div>
+        <div class="hero-badge-row">
+          <div class="hero-badge hero-badge--web">
+            <img class="hero-badge-icon" src="assets/icons/web.png" alt="" />
+            <span>Web</span>
+          </div>
 
-        <div class="hero-badge hero-badge--branding">
-          <img class="hero-badge-icon" src="assets/icons/branding.png" alt="" />
-          <span>Branding</span>
-        </div>
+          <div class="hero-badge hero-badge--eshopy">
+            <img class="hero-badge-icon" src="assets/icons/services-eshop.svg" alt="" />
+            <span>E-shopy</span>
+          </div>
 
-        <div class="hero-badge hero-badge--emaily">
-          <img class="hero-badge-icon" src="assets/icons/email.png" alt="" />
-          <span>Emaily</span>
-        </div>
+          <div class="hero-badge hero-badge--emaily">
+            <img class="hero-badge-icon" src="assets/icons/email.png" alt="" />
+            <span>Emaily</span>
+          </div>
 
-        <div class="hero-badge hero-badge--grafika">
-          <img class="hero-badge-icon" src="assets/icons/grafika.png" alt="" />
-          <span>Grafika</span>
-        </div>
+          <div class="hero-badge hero-badge--grafika">
+            <img class="hero-badge-icon" src="assets/icons/grafika.png" alt="" />
+            <span>Grafika</span>
+          </div>
 
-        <div class="hero-badge hero-badge--reklamy">
-          <img class="hero-badge-icon" src="assets/icons/ppc.png" alt="" />
-          <span>Reklamy</span>
+          <div class="hero-badge hero-badge--reklamy">
+            <img class="hero-badge-icon" src="assets/icons/ppc.png" alt="" />
+            <span>Reklamy</span>
+          </div>
         </div>
 
         <h1 class="hero-title" aria-label="Marketing na Jednotku">
@@ -347,6 +361,20 @@
 
         <a class="service-row" href="sluzby.html">
           <span class="content-badge service-icon" aria-hidden="true">
+            <img class="content-badge-icon" src="assets/icons/services-eshop.svg" alt="" />
+          </span>
+          <strong>Správa eshopov</strong>
+          <span class="service-copy">Nastavíme, upravíme aj rozbehneme e-shop na platforme, ktorú už používate. Platobné brány, redizajn, úpravy na mieru — všetko tak, aby e-shop reálne predával.</span>
+          <span class="service-arrow" aria-hidden="true">
+            <svg class="service-arrow-icon" viewBox="0 0 24 24">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="service-row" href="sluzby.html">
+          <span class="content-badge service-icon" aria-hidden="true">
             <img class="content-badge-icon" src="assets/icons/email.png" alt="" />
           </span>
           <strong>Email marketing</strong>
@@ -489,6 +517,7 @@
         </div>
       </footer>
     </section>
+    <script src="js/site-nav.js" defer></script>
     <script src="js/gradient-wave-text.js" defer></script>
     <script src="js/project-reveal.js" defer></script>
     <script src="js/services-reveal.js" defer></script>

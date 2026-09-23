@@ -16,23 +16,7 @@
   height: 100%;
   overflow: hidden;
   border-radius: var(--hero-frame-radius);
-  background:
-    radial-gradient(
-      ellipse at 48% 48%,
-      rgb(62 30 174 / 74%) 0%,
-      transparent 46%
-    ),
-    radial-gradient(
-      ellipse at 5% 86%,
-      rgb(255 255 255 / 78%) 0%,
-      transparent 38%
-    ),
-    radial-gradient(
-      ellipse at 96% 82%,
-      rgb(247 242 255 / 82%) 0%,
-      transparent 36%
-    ),
-    linear-gradient(180deg, #09031a 0%, #170540 28%, #522fc7 56%, #f4efff 100%);
+  background: var(--gradient-hero);
 }
 
 .hero-title {
@@ -84,6 +68,10 @@
 
 .hero-copy .button {
   margin-top: 34px;
+}
+
+.hero-badge-row {
+  display: contents;
 }
 
 .hero-badge {
@@ -146,7 +134,7 @@
   left: 15.3%;
 }
 
-.hero-badge--branding {
+.hero-badge--eshopy {
   --hero-badge-strength: 0.72;
   --hero-badge-rotate: 1.2deg;
   top: 27.7%;
@@ -1274,52 +1262,34 @@
     font-size: 15px;
   }
 
+  .hero-badge-row {
+    display: flex;
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    z-index: 2;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 10px;
+    width: min(88%, 460px);
+    transform: translateX(-50%);
+  }
+
   .hero-badge {
-    gap: 8px;
-    height: 38px;
-    padding: 0 16px;
-    font-size: 18px;
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    gap: 6px;
+    height: clamp(32px, 8.4vw, 38px);
+    padding: 0 clamp(12px, 3.4vw, 16px);
+    font-size: clamp(13px, 3.6vw, 16px);
+    transform: translate3d(var(--hero-badge-float-x), var(--hero-badge-float-y), 0);
   }
 
   .hero-badge-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .hero-badge--web {
-    top: 40.5%;
-    left: 10%;
-  }
-
-  .hero-badge--branding {
-    top: 37.2%;
-    left: 50.5%;
-    transform:
-      translateX(-50%)
-      translate3d(
-        calc(var(--hero-badge-x, 0px) * var(--hero-badge-strength)),
-        calc(var(--hero-badge-y, 0px) * var(--hero-badge-strength)),
-        0
-      )
-      translate3d(var(--hero-badge-float-x), var(--hero-badge-float-y), 0)
-      rotate(var(--hero-badge-rotate));
-  }
-
-  .hero-badge--emaily {
-    top: 41.2%;
-    right: auto;
-    left: 68%;
-  }
-
-  .hero-badge--grafika {
-    top: 53.2%;
-    left: 11%;
-  }
-
-  .hero-badge--reklamy {
-    top: 59.5%;
-    right: auto;
-    left: 63%;
+    width: clamp(13px, 3.4vw, 16px);
+    height: clamp(13px, 3.4vw, 16px);
   }
 
   .stats-section {
@@ -1456,34 +1426,41 @@
   }
 
   .service-row {
-    grid-template-columns: 98px minmax(0, 1fr) 58px;
-    gap: 22px;
+    position: relative;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 20px 18px;
+    align-items: start;
+    padding-right: 58px;
   }
 
   .service-icon {
-    width: 98px;
-    height: 56px;
+    width: 76px;
+    height: 48px;
+    min-height: 48px;
   }
 
   .service-icon .content-badge-icon {
-    width: 32px;
-    height: 32px;
+    width: 27px;
+    height: 27px;
   }
 
   .service-copy {
-    grid-column: 2 / -1;
+    grid-column: 1 / -1;
     max-width: 620px;
     font-size: 23px;
   }
 
   .service-arrow {
-    width: 58px;
-    height: 58px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 48px;
   }
 
   .service-arrow-icon {
-    width: 31px;
-    height: 31px;
+    width: 26px;
+    height: 26px;
   }
 
   .clients-cta-section {
@@ -1672,43 +1649,9 @@
     margin-top: 24px;
   }
 
-  .hero-badge {
-    gap: 5px;
-    height: 29px;
-    padding: 0 10px;
-    font-size: 13px;
-  }
-
-  .hero-badge-icon {
-    width: 12px;
-    height: 12px;
-  }
-
-  .hero-badge--web {
-    top: 39.5%;
-    left: 8%;
-  }
-
-  .hero-badge--branding {
-    top: 35.8%;
-    left: 50.5%;
-  }
-
-  .hero-badge--emaily {
-    top: 40.5%;
-    right: auto;
-    left: 58%;
-  }
-
-  .hero-badge--grafika {
-    top: 53.8%;
-    left: 8%;
-  }
-
-  .hero-badge--reklamy {
-    top: 60.2%;
-    right: auto;
-    left: 55%;
+  .hero-badge-row {
+    top: 150px;
+    width: min(92%, 340px);
   }
 
   .stats-section {
@@ -1838,18 +1781,20 @@
   }
 
   .service-row {
-    grid-template-columns: 76px minmax(0, 1fr) 48px;
-    gap: 16px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 16px 14px;
+    padding-right: 46px;
   }
 
   .service-icon {
-    width: 76px;
-    height: 48px;
+    width: 64px;
+    height: 42px;
+    min-height: 42px;
   }
 
   .service-icon .content-badge-icon {
-    width: 27px;
-    height: 27px;
+    width: 23px;
+    height: 23px;
   }
 
   .service-row strong {
@@ -1861,13 +1806,13 @@
   }
 
   .service-arrow {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
   }
 
   .service-arrow-icon {
-    width: 26px;
-    height: 26px;
+    width: 23px;
+    height: 23px;
   }
 
   .clients-cta-section {
