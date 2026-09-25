@@ -18,6 +18,47 @@
   </head>
   <body class="services-page">
     <main class="services-hero hero-frame" aria-labelledby="services-title">
+      <header class="site-header" aria-label="Hlavná navigácia">
+        <a class="site-header-logo" href="index.html" aria-label="Jednotka">
+          <img src="assets/logo/Jednotka.svg" alt="" />
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primárna navigácia">
+          <a href="index.html">Domov</a>
+          <a href="about.html">O nás</a>
+          <a href="sluzby.html" aria-current="page">Služby</a>
+          <a href="index.html#kariera">Kariéra</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+
+        <a class="button button--primary site-header-button" href="#kontakt" aria-label="Kontaktovať nás">
+          <span class="button-label" aria-hidden="true">
+            <span class="button-label-track">
+              <span class="button-label-line">Kontaktovať nás</span>
+              <span class="button-label-line">Kontaktovať nás</span>
+            </span>
+          </span>
+          <span class="button-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </span>
+        </a>
+
+        <button
+          class="site-nav-toggle"
+          type="button"
+          aria-label="Otvoriť menu"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="site-nav-toggle-line"></span>
+          <span class="site-nav-toggle-line"></span>
+          <span class="site-nav-toggle-line"></span>
+        </button>
+      </header>
+
       <div class="hero-badge-row" aria-hidden="true">
         <div class="hero-badge hero-badge--eshopy">
           <img class="hero-badge-icon" src="assets/icons/services-eshop.svg" alt="" />
@@ -138,18 +179,6 @@
       </section>
     </main>
 
-    <section class="services-trust-strip" aria-label="Dôvera klientov">
-      <p data-reveal>Pomohli sme rásť viac ako 100 firmám naprieč 15 odvetviami.</p>
-      <div class="services-logo-strip" aria-hidden="true">
-        <div class="services-logo-strip-track">
-          <img src="assets/logo/moving-stripe/logo-stripe-1.svg" alt="" />
-          <img src="assets/logo/moving-stripe/logo-stripe-2.svg" alt="" />
-          <img src="assets/logo/moving-stripe/logo-stripe-1.svg" alt="" />
-          <img src="assets/logo/moving-stripe/logo-stripe-2.svg" alt="" />
-        </div>
-      </div>
-    </section>
-
     <section class="services-problem-section" aria-labelledby="services-problem-title" data-wave-scroll-root>
       <div class="services-problem-pin">
         <h2 id="services-problem-title" class="services-wave-text" data-gradient-wave-text>
@@ -190,47 +219,101 @@
     <section class="services-why-section" aria-labelledby="services-why-title">
       <h2 id="services-why-title" data-reveal>Nie sme ďalšia agentúra, ktorá si najme subdodávateľov</h2>
       <div class="services-why-grid">
-        <article class="services-why-item">
-          <span class="services-why-index" aria-hidden="true">01</span>
+        <article class="services-why-item" data-reveal>
+          <span class="services-why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </span>
           <h3>Jeden tím, jedna zodpovednosť.</h3>
           <p>Nehľadáte, kto za čo môže. Za všetko zodpovedáme my.</p>
         </article>
-        <article class="services-why-item">
-          <span class="services-why-index" aria-hidden="true">02</span>
+        <article class="services-why-item" data-reveal>
+          <span class="services-why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </span>
           <h3>Vidíte celý obraz.</h3>
           <p>Web, e-shop, reklamy aj emaily riešime spolu, nie ako izolované projekty.</p>
         </article>
-        <article class="services-why-item">
-          <span class="services-why-index" aria-hidden="true">03</span>
+        <article class="services-why-item" data-reveal>
+          <span class="services-why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+          </span>
           <h3>Rozhodujeme sa podľa čísel.</h3>
           <p>Každé riešenie posudzujeme podľa toho, či prináša výsledky.</p>
         </article>
       </div>
     </section>
 
-    <section class="services-results-section" aria-labelledby="services-results-title">
-      <h2 id="services-results-title" data-reveal>Za číslami sú naši klienti</h2>
-      <div class="services-stats-row" aria-label="Výsledky agentúry" data-reveal>
-        <div><strong>100+</strong><span>klientov</span></div>
-        <div><strong>5</strong><span>rokov praxe</span></div>
-        <div><strong>15+</strong><span>odvetví</span></div>
-      </div>
-      <div class="services-result-cards">
-        <article class="services-result-card services-result-card--purple" data-reveal>
-          <strong>+40 %</strong>
-          <h3>objednávok cez email</h3>
-          <p>Po troch mesiacoch automatizácií a pravidelnej komunikácie.</p>
-        </article>
-        <article class="services-result-card services-result-card--orange" data-reveal>
-          <strong>+32 %</strong>
-          <h3>viac dopytov z webu</h3>
-          <p>Po úprave štruktúry, textov a kľúčových podstránok.</p>
-        </article>
-        <article class="services-result-card services-result-card--green" data-reveal>
-          <strong>-18 %</strong>
-          <h3>nižšia cena za lead</h3>
-          <p>Po prečistení kampaní a jasnejšom meraní výkonu.</p>
-        </article>
+    <section class="services-projects-section" aria-labelledby="services-projects-title">
+      <h2 id="services-projects-title" data-reveal>Naše projekty</h2>
+      <div class="services-project-grid">
+        <a class="services-project-tile services-project-tile--large" href="#" data-reveal>
+          <img src="img/projects/placeholder.jpg" alt="" />
+          <span class="services-project-shade" aria-hidden="true"></span>
+          <span class="arrow-badge-button services-project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </span>
+          <span class="services-project-copy">
+            <strong>Progym</strong>
+            <span>Fitness centrum</span>
+          </span>
+        </a>
+        <a class="services-project-tile" href="#" data-reveal>
+          <img src="img/projects/placeholder.jpg" alt="" />
+          <span class="services-project-shade" aria-hidden="true"></span>
+          <span class="arrow-badge-button services-project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </span>
+          <span class="services-project-copy">
+            <strong>Štýlová a krásna</strong>
+            <span>E-shop s kozmetikou</span>
+          </span>
+        </a>
+        <a class="services-project-tile" href="#" data-reveal>
+          <img src="img/projects/placeholder.jpg" alt="" />
+          <span class="services-project-shade" aria-hidden="true"></span>
+          <span class="arrow-badge-button services-project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </span>
+          <span class="services-project-copy">
+            <strong>Cammino OZ</strong>
+            <span>Nezisková organizácia</span>
+          </span>
+        </a>
+        <a class="services-project-tile services-project-tile--wide" href="#" data-reveal>
+          <img src="img/projects/placeholder.jpg" alt="" />
+          <span class="services-project-shade" aria-hidden="true"></span>
+          <span class="arrow-badge-button services-project-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </span>
+          <span class="services-project-copy">
+            <strong>Štýlová a krásna</strong>
+            <span>Email automatizácie</span>
+          </span>
+        </a>
       </div>
     </section>
 
@@ -321,6 +404,7 @@
       </form>
     </section>
 
+    <script src="js/site-nav.js" defer></script>
     <script src="js/hero-badges.js" defer></script>
     <script src="js/drag-scroll.js" defer></script>
 

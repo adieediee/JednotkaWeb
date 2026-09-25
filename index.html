@@ -18,48 +18,48 @@
   </head>
   <body>
     <main class="hero">
+      <header class="site-header" aria-label="Hlavná navigácia">
+        <a class="site-header-logo" href="/" aria-label="Jednotka">
+          <img src="assets/logo/Jednotka.svg" alt="" />
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primárna navigácia">
+          <a href="/">Domov</a>
+          <a href="about.html">O nás</a>
+          <a href="sluzby.html">Služby</a>
+          <a href="#kariera">Kariéra</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+
+        <a class="button button--primary site-header-button" href="sluzby.html" aria-label="Pozrieť služby">
+          <span class="button-label" aria-hidden="true">
+            <span class="button-label-track">
+              <span class="button-label-line">Pozrieť služby</span>
+              <span class="button-label-line">Pozrieť služby</span>
+            </span>
+          </span>
+          <span class="button-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </span>
+        </a>
+
+        <button
+          class="site-nav-toggle"
+          type="button"
+          aria-label="Otvoriť menu"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="site-nav-toggle-line"></span>
+          <span class="site-nav-toggle-line"></span>
+          <span class="site-nav-toggle-line"></span>
+        </button>
+      </header>
+
       <div class="hero-frame">
-        <header class="site-header" aria-label="Hlavná navigácia">
-          <a class="site-header-logo" href="/" aria-label="Jednotka">
-            <img src="assets/logo/Jednotka.svg" alt="" />
-          </a>
-
-          <nav class="site-nav" id="site-nav" aria-label="Primárna navigácia">
-            <a href="/">Domov</a>
-            <a href="about.html">O nás</a>
-            <a href="sluzby.html">Služby</a>
-            <a href="#kariera">Kariéra</a>
-            <a href="blog.html">Blog</a>
-          </nav>
-
-          <a class="button button--primary site-header-button" href="sluzby.html" aria-label="Pozrieť služby">
-            <span class="button-label" aria-hidden="true">
-              <span class="button-label-track">
-                <span class="button-label-line">Pozrieť služby</span>
-                <span class="button-label-line">Pozrieť služby</span>
-              </span>
-            </span>
-            <span class="button-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M7 17 17 7" />
-                <path d="M8 7h9v9" />
-              </svg>
-            </span>
-          </a>
-
-          <button
-            class="site-nav-toggle"
-            type="button"
-            aria-label="Otvoriť menu"
-            aria-expanded="false"
-            aria-controls="site-nav"
-          >
-            <span class="site-nav-toggle-line"></span>
-            <span class="site-nav-toggle-line"></span>
-            <span class="site-nav-toggle-line"></span>
-          </button>
-        </header>
-
         <div class="hero-badge-row">
           <div class="hero-badge hero-badge--web">
             <img class="hero-badge-icon" src="assets/icons/web.png" alt="" />
