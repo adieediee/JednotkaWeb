@@ -15,6 +15,7 @@ document.querySelectorAll("[data-drag-scroll]").forEach((track) => {
   let virtualScrollLeft = track.scrollLeft;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const autoScrollSpeed = Number(track.dataset.autoScrollSpeed || 8);
+  const autoScrollMode = track.dataset.autoScrollMode || "bounce";
   const hasAutoScroll = track.hasAttribute("data-auto-scroll");
   // A single auto-scroll frame step never exceeds ~2px; anything bigger reaching
   // the scroll event is a real user gesture (wheel, trackpad, scrollbar).
@@ -72,7 +73,7 @@ document.querySelectorAll("[data-drag-scroll]").forEach((track) => {
 
       if (virtualScrollLeft >= maxScroll) {
         virtualScrollLeft = maxScroll;
-        autoDirection = -1;
+        autoDirection = autoScrollMode === "one-way" ? 1 : -1;
       } else if (virtualScrollLeft <= 0) {
         virtualScrollLeft = 0;
         autoDirection = 1;

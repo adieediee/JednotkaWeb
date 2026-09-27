@@ -1,6 +1,4 @@
-const heroFrame = document.querySelector(".hero-frame");
-
-if (heroFrame) {
+document.querySelectorAll(".hero-frame, [data-hero-badges]").forEach((heroFrame) => {
   const badges = [...heroFrame.querySelectorAll(".hero-badge")];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let floatFrame = null;
@@ -63,4 +61,4 @@ if (heroFrame) {
   heroFrame.addEventListener("pointerleave", resetHeroBadges);
   reduceMotion.addEventListener("change", syncHeroBadgeFloat);
   syncHeroBadgeFloat();
-}
+});

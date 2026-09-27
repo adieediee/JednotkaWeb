@@ -1,708 +1,695 @@
 .about-page {
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
   color: var(--color-white);
-  background: var(--color-page-bg);
-}
-
-.about-page *,
-.about-page *::before,
-.about-page *::after {
-  box-sizing: border-box;
-}
-
-.about-page h1,
-.about-page h2,
-.about-page h3,
-.about-page p {
-  overflow-wrap: break-word;
-}
-
-.about-header {
-  position: relative;
-  top: auto;
-  right: auto;
-  left: auto;
-  width: calc(100% - 64px);
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 34px 0 28px;
-}
-
-.about-hero,
-.about-problem-section,
-.about-services-section,
-.about-process-section,
-.about-why-section,
-.about-results-section,
-.about-faq-section,
-.about-contact-section {
-  padding-right: var(--section-padding-x);
-  padding-left: var(--section-padding-x);
+  background: var(--section-dark-bg);
 }
 
 .about-hero {
-  padding-top: 64px;
-  padding-bottom: 118px;
+  position: relative;
+  min-height: 840px;
+  height: 100vh;
+  overflow: visible;
+  background: var(--section-dark-bg);
 }
 
-.about-hero-inner,
-.about-problem-section,
-.about-services-section,
-.about-process-section,
-.about-why-section,
-.about-results-section,
-.about-faq-section,
-.about-contact-inner {
-  max-width: 1240px;
+.about-header {
+  top: 30px;
+}
+
+.about-header .site-nav a {
+  color: rgb(255 255 255 / 68%);
+}
+
+.about-header .site-nav a[aria-current="page"],
+.about-header .site-nav a:hover {
+  color: var(--color-white);
+}
+
+.about-title-wrap {
+  position: relative;
+  z-index: 2;
+  width: min(calc(100% - 32px), 940px);
   margin: 0 auto;
+  padding-top: clamp(106px, 15.7vh, 154px);
 }
 
-.about-hero-inner {
-  max-width: 760px;
-  margin-left: max(var(--section-padding-x), calc((100vw - 1240px) / 2));
-}
-
-.about-eyebrow {
-  display: block;
-  margin-bottom: 18px;
-  color: #ff6b00;
-  font-family: var(--font-primary);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.about-hero h1 {
-  margin: 0 0 26px;
+.about-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(54px, 6.8vw, 104px);
+  font-size: clamp(82px, 9.6vw, 124px);
   font-weight: 800;
   letter-spacing: 0;
-  line-height: 0.96;
-}
-
-.about-hero p,
-.about-text-grid p,
-.about-contact-copy p {
-  color: rgb(255 255 255 / 68%);
-  font-family: var(--font-secondary);
-  font-size: 19px;
-  font-weight: 400;
-  line-height: 1.45;
-}
-
-.about-hero p {
-  max-width: 590px;
-  margin: 0 0 40px;
-}
-
-.about-trust-section {
-  border-top: 1px solid rgb(255 255 255 / 10%);
-  border-bottom: 1px solid rgb(255 255 255 / 10%);
-  background: #101010;
-}
-
-.about-trust-section p {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 34px var(--section-padding-x) 24px;
-  color: rgb(255 255 255 / 82%);
-  font-family: var(--font-accent);
-  font-size: clamp(24px, 3vw, 42px);
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.05;
+  line-height: 0.82;
   text-align: center;
 }
 
-.about-logo-strip {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 30px;
+.about-title img {
+  display: block;
+  width: clamp(350px, 38.4vw, 496px);
+  height: auto;
+  margin-top: clamp(-4px, -0.2vw, -2px);
 }
 
-.about-logo-strip::before,
-.about-logo-strip::after {
+/*
+ * .hero-badge is the global floating-badge component (see css/pages/home.css).
+ * about.html doesn't load home.css, so the component is duplicated here
+ * verbatim — same pattern css/pages/services.css already uses.
+ */
+.hero-badge-row {
+  display: contents;
+}
+
+.hero-badge {
   position: absolute;
-  top: 0;
   z-index: 2;
-  width: 18%;
-  height: 100%;
+  --hero-badge-strength: 1;
+  --hero-badge-rotate: 0deg;
+  --hero-badge-float-x: 0px;
+  --hero-badge-float-y: 0px;
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  background: rgb(255 255 255 / 10%);
+  backdrop-filter: blur(6px);
+  transform:
+    translate3d(
+      calc(var(--hero-badge-x, 0px) * var(--hero-badge-strength)),
+      calc(var(--hero-badge-y, 0px) * var(--hero-badge-strength)),
+      0
+    )
+    translate3d(var(--hero-badge-float-x), var(--hero-badge-float-y), 0)
+    rotate(var(--hero-badge-rotate));
+  transition: transform 260ms ease-out;
+  will-change: transform;
+}
+
+.hero-badge::before {
+  position: absolute;
+  inset: 0;
+  padding: 0.7px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgb(255 255 255 / 72%) 0%,
+    rgb(255 255 255 / 18%) 34%,
+    rgb(255 255 255 / 8%) 54%,
+    rgb(255 255 255 / 42%) 100%
+  );
   content: "";
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.hero-badge-icon {
+  width: 23px;
+  height: 23px;
+  overflow: visible;
+  object-fit: contain;
+  fill: none;
+  stroke: #ff6b00;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.3;
+}
+
+.hero-badge--about-skills {
+  --hero-badge-strength: 0.65;
+  --hero-badge-rotate: -1.1deg;
+  top: clamp(88px, 9.3vw, 120px);
+  left: max(0px, calc(50% - 399px));
+}
+
+.hero-badge--about-goal {
+  --hero-badge-strength: -0.7;
+  --hero-badge-rotate: 1deg;
+  top: clamp(186px, 18.1vw, 224px);
+  right: max(0px, calc(50% - 452px));
+}
+
+.about-team-carousel {
+  --about-card-width: clamp(326px, 27.6vw, 360px);
+  --about-card-height: clamp(448px, 38.9vw, 506px);
+  --about-card-gap: 10px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: var(--about-card-gap);
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-top: 40px;
+  padding: 0 0 74px clamp(24px, 6.9vw, 87px);
+  cursor: grab;
+  scrollbar-width: none;
+  touch-action: pan-y;
+  user-select: none;
+  -ms-overflow-style: none;
+}
+
+.about-team-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.about-team-carousel.is-dragging {
+  cursor: grabbing;
+}
+
+.about-member-card {
+  position: relative;
+  flex: 0 0 var(--about-card-width);
+  width: var(--about-card-width);
+  height: var(--about-card-height);
+  overflow: hidden;
+  border-radius: 18px;
+  background: #202020;
+}
+
+.about-member-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(1);
   pointer-events: none;
 }
 
-.about-logo-strip::before {
-  left: 0;
-  background: linear-gradient(90deg, #101010 0%, rgb(16 16 16 / 82%) 40%, transparent 100%);
+.about-member-shade {
+  position: absolute;
+  inset: 58% 0 0;
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 78%) 100%);
+  pointer-events: none;
 }
 
-.about-logo-strip::after {
-  right: 0;
-  background: linear-gradient(270deg, #101010 0%, rgb(16 16 16 / 82%) 40%, transparent 100%);
+.about-member-copy {
+  position: absolute;
+  right: 14px;
+  bottom: 15px;
+  left: 14px;
+  z-index: 1;
+  display: grid;
+  justify-items: start;
+  gap: 6px;
 }
 
-.about-logo-strip-track {
+.about-member-role.content-badge {
+  min-height: 25px;
+  padding: 0 10px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  background: rgb(255 255 255 / 12%);
+  backdrop-filter: blur(8px);
+}
+
+.about-member-card h2 {
+  margin: 0;
+  max-width: 100%;
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-size: clamp(28px, 2.35vw, 30px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  overflow-wrap: break-word;
+}
+
+/*
+ * Scroll-to-read wave text — same component as .gradient-wave-text on the
+ * homepage (css/pages/home.css), duplicated here for the same reason as
+ * .hero-badge above: about.html doesn't load home.css. Typography/color
+ * values are identical; only the layout is centered instead of paired
+ * with a decorative side panel.
+ */
+.about-manifesto-section {
+  min-height: 180vh;
+  padding: 0 var(--section-padding-x);
+  background: var(--section-dark-bg);
+  color: var(--color-white);
+}
+
+.about-manifesto-pin {
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
-  gap: 64px;
-  width: max-content;
-  animation: about-logo-move 36s linear infinite;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-.about-logo-strip-track img {
-  display: block;
-  width: auto;
-  max-width: none;
-  height: 46px;
-  opacity: 0.78;
-}
-
-@keyframes about-logo-move {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.about-section-head {
-  max-width: 760px;
-  margin-bottom: 54px;
-}
-
-.about-section-head--center {
-  margin-right: auto;
-  margin-left: auto;
+.about-manifesto-text {
+  max-width: 780px;
+  margin: 0 auto;
+  color: rgb(255 255 255 / 34%);
+  font-family: var(--font-secondary);
+  font-size: clamp(36px, 3.6vw, 54px);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.12;
   text-align: center;
 }
 
-.about-section-head h2 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(42px, 5.2vw, 76px);
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 0.98;
+.about-manifesto-text .wave-char {
+  color: var(--wave-color, rgb(255 255 255 / 34%));
+  transition: color 140ms linear;
+  will-change: color;
 }
 
-.about-problem-section,
-.about-services-section,
-.about-process-section,
-.about-why-section,
-.about-results-section,
-.about-faq-section,
-.about-contact-section {
-  padding-top: 118px;
-  padding-bottom: 118px;
+/* ---------- Scroll-triggered blur reveal (js/animations/about.js) ---------- */
+
+[data-blur-reveal] {
+  opacity: 0;
+  filter: blur(18px);
+  transform: translateY(28px);
+  transition:
+    opacity 750ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 750ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 750ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
-.about-text-grid {
+[data-blur-reveal].is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-blur-reveal] {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Split: image + text ---------- */
+
+.about-split-section {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 96px var(--section-padding-x);
+}
+
+.about-split-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 46px;
-  max-width: 980px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(40px, 6vw, 90px);
 }
 
-.about-text-grid p {
+.about-split-media {
   margin: 0;
+  aspect-ratio: 1.1;
+  overflow: hidden;
+  border-radius: 32px;
 }
 
-.about-services-section,
-.about-why-section,
-.about-faq-section {
-  border-top: 1px solid rgb(255 255 255 / 8%);
+.about-split-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.about-services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.about-service-item,
-.about-why-list article,
-.about-case-grid article {
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 24px;
-  background: rgb(255 255 255 / 4%);
-}
-
-.about-service-item {
-  display: grid;
-  align-content: start;
-  gap: 16px;
-  min-height: 250px;
-  padding: 28px;
-}
-
-.about-service-item img {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-}
-
-.about-service-item h3,
-.process-step h3,
-.about-why-list h3,
-.about-case-grid h3,
-.about-faq-list summary {
+.about-split-text {
+  max-width: 480px;
   margin: 0;
-  font-family: var(--font-accent);
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.1;
-}
-
-.about-service-item h3 {
-  font-size: 28px;
-}
-
-.about-service-item p,
-.process-step p,
-.about-why-list p,
-.about-case-grid p,
-.about-faq-list p,
-.about-form-note {
-  margin: 0;
-  color: rgb(255 255 255 / 64%);
+  color: rgb(255 255 255 / 70%);
   font-family: var(--font-secondary);
-  font-size: 16px;
+  font-size: clamp(20px, 2vw, 26px);
   font-weight: 400;
   line-height: 1.45;
 }
 
-.process-grid {
+/* ---------- Projects: dense bento mosaic ---------- */
+
+.about-projects-section {
+  padding: 100px 0 140px;
+  background: var(--section-dark-bg);
+}
+
+.about-project-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-auto-rows: 160px;
+  grid-auto-flow: dense;
+  gap: 12px;
+  padding: 0 12px;
 }
 
-.process-step {
-  display: grid;
-  gap: 14px;
-  padding-top: 26px;
-  border-top: 1px solid rgb(255 255 255 / 14%);
+.about-project-tile {
+  position: relative;
+  z-index: 0;
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  color: inherit;
+  text-decoration: none;
 }
 
-.process-step-number {
-  color: rgb(255 255 255 / 34%);
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0;
+.about-project-tile--w1 {
+  grid-column: span 1;
 }
 
-.process-step h3 {
-  font-size: 22px;
+.about-project-tile--w2 {
+  grid-column: span 2;
 }
 
-.about-why-list {
-  display: grid;
-  gap: 16px;
-  max-width: 980px;
+.about-project-tile--w3 {
+  grid-column: span 3;
 }
 
-.about-why-list article {
-  display: grid;
-  grid-template-columns: minmax(230px, 0.38fr) minmax(0, 1fr);
-  gap: 32px;
-  align-items: start;
-  padding: 28px;
+.about-project-tile--w4 {
+  grid-column: span 4;
 }
 
-.about-why-list h3 {
-  font-size: 24px;
+.about-project-tile--h1 {
+  grid-row: span 1;
 }
 
-.about-stats-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px 58px;
-  margin-bottom: 42px;
-  padding: 42px var(--section-padding-x);
-  border-top: 1px solid rgb(255 255 255 / 10%);
-  border-bottom: 1px solid rgb(255 255 255 / 10%);
+.about-project-tile--h2 {
+  grid-row: span 2;
 }
 
-.about-stat {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
+.about-project-tile--h3 {
+  grid-row: span 3;
 }
 
-.about-stat strong {
-  font-family: var(--font-display);
-  font-size: 38px;
-  font-weight: 800;
-  letter-spacing: 0;
+.about-project-tile img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about-stat span {
-  color: rgb(255 255 255 / 62%);
+.about-project-tile:hover img,
+.about-project-tile:focus-visible img {
+  transform: scale(1.06);
+}
+
+.about-project-shade {
+  position: absolute;
+  inset: 50% 0 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 70%) 100%);
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+
+.about-project-tile:hover .about-project-shade,
+.about-project-tile:focus-visible .about-project-shade {
+  opacity: 1;
+}
+
+.about-project-copy {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 1;
+  color: var(--color-white);
   font-family: var(--font-accent);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 320ms ease,
+    transform 320ms ease;
 }
 
-.about-case-grid {
+.about-project-tile:hover .about-project-copy,
+.about-project-tile:focus-visible .about-project-copy {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Closing CTA: brand gradient blooms in on scroll ---------- */
+
+.about-cta-section {
+  padding: 0 var(--page-frame-margin) 140px;
+}
+
+.about-cta-panel {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.about-case-grid article {
-  display: grid;
-  gap: 12px;
-  padding: 28px;
-}
-
-.about-case-grid strong {
-  color: #ff6b00;
-  font-family: var(--font-display);
-  font-size: 54px;
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 0.95;
-}
-
-.about-case-grid h3 {
-  font-size: 24px;
-}
-
-.about-faq-list {
-  display: grid;
-  gap: 12px;
-  max-width: 980px;
-}
-
-.about-faq-list details {
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 18px;
-  background: rgb(255 255 255 / 4%);
-}
-
-.about-faq-list summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 23px 26px;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.about-faq-list summary::after {
-  color: #ff6b00;
-  content: "+";
-}
-
-.about-faq-list details[open] summary::after {
-  content: "-";
-}
-
-.about-faq-list p {
-  padding: 0 26px 24px;
-}
-
-.about-contact-section {
-  background:
-    radial-gradient(ellipse at 50% 0%, rgb(93 49 221 / 40%) 0%, transparent 48%),
-    #101010;
-}
-
-.about-contact-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1fr);
-  gap: clamp(42px, 7vw, 90px);
-  align-items: start;
-}
-
-.about-contact-copy h2 {
-  max-width: 560px;
-  margin: 0 0 24px;
-  font-family: var(--font-display);
-  font-size: clamp(42px, 5vw, 72px);
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 0.98;
-}
-
-.about-contact-copy p {
-  max-width: 470px;
-  margin: 0;
-}
-
-.about-contact-form {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  padding: 28px;
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 24px;
-  background: rgb(255 255 255 / 5%);
-}
-
-.about-contact-form label {
-  display: grid;
-  gap: 9px;
-  min-width: 0;
-  color: rgb(255 255 255 / 70%);
-  font-family: var(--font-secondary);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.about-contact-form input,
-.about-contact-form select,
-.about-contact-form textarea {
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid rgb(255 255 255 / 12%);
-  border-radius: 14px;
+  justify-items: center;
+  align-content: center;
+  gap: 40px;
+  min-height: 560px;
+  padding: 80px var(--section-padding-x);
+  border-radius: var(--hero-frame-radius);
+  text-align: center;
   color: var(--color-white);
-  font: 400 16px/1.2 var(--font-secondary);
-  background: rgb(0 0 0 / 24%);
-  outline: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgb(93 49 221 / 82%) 0%, transparent 42%),
+    radial-gradient(ellipse at 16% 82%, rgb(255 255 255 / 70%) 0%, transparent 32%),
+    radial-gradient(ellipse at 84% 84%, rgb(255 255 255 / 60%) 0%, transparent 34%),
+    linear-gradient(180deg, #09031a 0%, #180747 18%, #5f2df5 46%, #b998ff 66%, #f5efff 81%, #ffffff 100%);
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 1.15s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about-contact-form input,
-.about-contact-form select {
-  height: 52px;
-  padding: 0 16px;
+.about-cta-section.is-visible .about-cta-panel {
+  clip-path: circle(150% at 50% 50%);
 }
 
-.about-contact-form textarea {
-  min-height: 132px;
-  padding: 16px;
-  resize: vertical;
+.about-cta-title {
+  max-width: 780px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.05;
 }
 
-.about-contact-form input::placeholder,
-.about-contact-form textarea::placeholder {
-  color: rgb(255 255 255 / 34%);
-}
-
-.about-contact-form select {
-  color: rgb(255 255 255 / 82%);
-}
-
-.about-contact-message,
-.about-contact-form .button,
-.about-form-note {
-  grid-column: 1 / -1;
-}
-
-.about-contact-form .button {
-  justify-self: start;
-  margin-top: 8px;
-  border: 0;
-  cursor: pointer;
-}
-
-.about-form-note {
-  font-size: 14px;
-}
-
-.about-footer {
-  position: static;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  width: auto;
-  max-width: 1230px;
-  margin: 0 auto;
-  border-radius: 0;
-}
-
-@media (max-width: 980px) {
-  .about-hero {
-    padding-top: 48px;
+@media (max-width: 900px) {
+  .about-manifesto-section {
+    min-height: 170vh;
   }
 
-  .about-hero-inner {
-    margin-left: auto;
+  .about-manifesto-text {
+    max-width: 560px;
+    font-size: clamp(32px, 7.4vw, 46px);
   }
 
-  .about-services-grid,
-  .about-case-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .about-split-section {
+    padding: 72px var(--section-padding-x);
   }
 
-  .process-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 44px;
-  }
-
-  .about-contact-inner {
+  .about-split-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-project-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-auto-rows: 140px;
+  }
+
+  .about-cta-panel {
+    min-height: 460px;
+    padding: 64px var(--section-padding-x);
+  }
+
+  .about-split-media {
+    aspect-ratio: 1.5;
+  }
+
+  .about-split-text {
+    max-width: none;
+  }
+
+  .about-hero {
+    min-height: 690px;
+    height: 100svh;
+  }
+
+  .about-title-wrap {
+    width: min(calc(100% - 32px), 680px);
+    padding-top: 128px;
+  }
+
+  .about-title {
+    font-size: clamp(64px, 14vw, 94px);
+  }
+
+  .about-title img {
+    width: clamp(282px, 58vw, 390px);
+  }
+
+  .hero-badge-row {
+    display: flex;
+    position: absolute;
+    top: 92px;
+    left: 50%;
+    z-index: 2;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 10px;
+    width: min(88%, 460px);
+    transform: translateX(-50%);
+  }
+
+  .hero-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    gap: 6px;
+    height: clamp(32px, 8.4vw, 38px);
+    padding: 0 clamp(12px, 3.4vw, 16px);
+    font-size: clamp(13px, 3.6vw, 16px);
+    transform: translate3d(var(--hero-badge-float-x), var(--hero-badge-float-y), 0);
+  }
+
+  .hero-badge-icon {
+    width: clamp(13px, 3.4vw, 16px);
+    height: clamp(13px, 3.4vw, 16px);
+  }
+
+  .about-team-carousel {
+    --about-card-width: min(78vw, 324px);
+    --about-card-height: clamp(365px, 92vw, 430px);
+    gap: 12px;
+    margin-top: 34px;
+    padding-left: 24px;
+  }
+
+  .about-member-card {
+    border-radius: 18px;
   }
 }
 
 @media (max-width: 700px) {
   .about-header {
-    width: auto;
-    margin-right: 16px;
-    margin-left: 16px;
-    padding-top: 24px;
+    top: 20px;
   }
 
-  .about-hero,
-  .about-problem-section,
-  .about-services-section,
-  .about-process-section,
-  .about-why-section,
-  .about-results-section,
-  .about-faq-section,
-  .about-contact-section {
-    padding-right: 16px;
-    padding-left: 16px;
-  }
-
-  .about-hero {
-    padding-top: 42px;
-    padding-bottom: 82px;
-  }
-
-  .about-hero h1 {
-    font-size: clamp(38px, 10.4vw, 46px);
-    line-height: 1;
-  }
-
-  .about-hero p,
-  .about-text-grid p,
-  .about-contact-copy p {
-    font-size: 17px;
-  }
-
-  .about-trust-section p {
-    padding-right: 16px;
-    padding-left: 16px;
-    font-size: clamp(22px, 7vw, 28px);
-    text-align: left;
-  }
-
-  .about-logo-strip-track {
-    gap: 42px;
-  }
-
-  .about-logo-strip-track img {
-    height: 36px;
-  }
-
-  .about-problem-section,
-  .about-services-section,
-  .about-process-section,
-  .about-why-section,
-  .about-results-section,
-  .about-faq-section,
-  .about-contact-section {
-    padding-top: 78px;
-    padding-bottom: 78px;
-  }
-
-  .about-section-head {
-    margin-bottom: 38px;
-  }
-
-  .about-section-head h2,
-  .about-contact-copy h2 {
-    font-size: clamp(31px, 8.4vw, 38px);
-    line-height: 1.02;
-  }
-
-  .about-text-grid,
-  .about-services-grid,
-  .process-grid,
-  .about-case-grid,
-  .about-contact-form {
-    grid-template-columns: 1fr;
-  }
-
-  .about-service-item {
-    min-height: 0;
-    padding: 24px;
-  }
-
-  .about-why-list article {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 24px;
-  }
-
-  .about-stats-strip {
-    justify-content: flex-start;
-    gap: 16px 34px;
-    padding: 32px 0;
-  }
-
-  .about-stat strong {
-    font-size: 31px;
-  }
-
-  .about-case-grid article {
-    padding: 24px;
-  }
-
-  .about-case-grid strong {
-    font-size: 44px;
-  }
-
-  .about-faq-list summary {
-    padding: 20px;
-    font-size: 19px;
-  }
-
-  .about-faq-list p {
-    padding: 0 20px 20px;
-  }
-
-  .about-contact-form {
-    padding: 20px;
-    border-radius: 20px;
-  }
-
-  .about-contact-form .button {
-    width: 100%;
-  }
-
-  .about-footer {
-    max-width: none;
+  .about-header .site-nav {
+    background: rgb(15 15 15 / 92%);
   }
 }
 
 @media (max-width: 520px) {
-  .about-hero-inner,
-  .about-section-head,
-  .about-text-grid,
-  .about-services-grid,
-  .process-grid,
-  .about-why-list,
-  .about-case-grid,
-  .about-faq-list,
-  .about-contact-inner,
-  .about-trust-section p {
-    width: min(100%, 358px);
-    max-width: 358px;
-    margin-right: 0;
-    margin-left: 0;
+  .about-manifesto-section {
+    min-height: 160vh;
   }
 
-  .about-hero h1 {
-    font-size: 40px;
+  .about-manifesto-text {
+    font-size: 30px;
+    line-height: 1.13;
+  }
+
+  .about-split-text {
+    font-size: 18px;
+  }
+
+  .about-project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 120px;
+    padding: 0 16px;
+  }
+
+  .about-project-tile--w3,
+  .about-project-tile--w4 {
+    grid-column: span 3;
+  }
+
+  .about-project-copy {
+    font-size: 16px;
+  }
+
+  .about-hero {
+    min-height: 650px;
+  }
+
+  .about-title-wrap {
+    width: min(calc(100% - 32px), 390px);
+    padding-top: 112px;
+  }
+
+  .about-title {
+    font-size: clamp(52px, 15.8vw, 62px);
+  }
+
+  .about-title img {
+    width: min(78vw, 296px);
+  }
+
+  .hero-badge-row {
+    top: 76px;
+    width: min(92%, 340px);
+  }
+
+  .about-team-carousel {
+    --about-card-width: 78vw;
+    --about-card-height: min(398px, 102vw);
+    gap: 10px;
+    margin-top: 30px;
+    padding-left: 16px;
+  }
+
+  .about-member-card {
+    border-radius: 16px;
+  }
+
+  .about-member-copy {
+    right: 12px;
+    bottom: 13px;
+    left: 12px;
+  }
+
+  .about-member-role.content-badge {
+    min-height: 23px;
+    padding: 0 9px;
+    font-size: 14px;
+  }
+
+  .about-member-card h2 {
+    font-size: 27px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .about-logo-strip-track {
-    animation: none;
+  .hero-badge {
+    transform: none;
+    transition: none;
+  }
+
+  .about-manifesto-section {
+    min-height: 0;
+  }
+
+  .about-manifesto-pin {
+    position: static;
+    min-height: 0;
+    padding: 100px 0;
+  }
+
+  .about-cta-panel {
+    clip-path: none;
+    transition: none;
   }
 }

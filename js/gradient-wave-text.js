@@ -33,6 +33,7 @@ waveTexts.forEach((text) => {
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     const scrollable = Math.max(1, rect.height - viewportHeight);
     const progress = clamp(-rect.top / scrollable, 0, 1);
+
     const direction = progress * (chars.length + 32) - 16;
     const band = 26;
 
